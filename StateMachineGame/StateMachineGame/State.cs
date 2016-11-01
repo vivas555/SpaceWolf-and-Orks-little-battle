@@ -273,7 +273,8 @@ namespace StateMachineGame
 
         protected override void setNextState()
         {
-            if (soldier.Position == this.soldier.Target.Position)
+            if (soldier.Position.X - this.soldier.Target.Position.X <=0.1f &&
+                soldier.Position.Y - this.soldier.Target.Position.Y <= 0.1f)
             {
                 this.soldier.CurrentState = new SafetyState(this.soldier);
                 this.soldier = null;
